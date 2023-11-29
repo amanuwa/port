@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:port/mobilecvpage.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:list_wheel_scroll_view_nls/list_wheel_scroll_view_nls.dart';
 
 class mobilemode extends StatefulWidget {
   const mobilemode({super.key});
@@ -11,10 +13,25 @@ class mobilemode extends StatefulWidget {
 }
 
 class _mobilemodeState extends State<mobilemode> {
+  
   //double width=
 
   @override
   Widget build(BuildContext context) {
+    final Uri _url = Uri.parse('https://github.com/amanuwa/compff');
+
+ Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
+}
+final Uri _url1 = Uri.parse('https://github.com/amanuwa/digitaltransport');
+
+ Future<void> _launchUrl1() async {
+  if (!await launchUrl(_url1)) {
+    throw Exception('Could not launch $_url');
+  }
+}
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -140,37 +157,41 @@ class _mobilemodeState extends State<mobilemode> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
-                Row(
-                  children: [
-                    Flexible(
-                      child: Container(
+                Container(
+                  color: Color.fromARGB(255, 139, 158, 192),
+                  margin: EdgeInsets.all(5),
+                  child: Column(
+                    children: [Container(
+           margin: EdgeInsets.fromLTRB(8, 5, 8, 0),
+          //  color: Color.fromARGB(255, 139, 158, 192),
+            alignment: Alignment.center,
+            child: Text(
+              'The following projects are digital transport user inteface ',
+              style: TextStyle(color: Colors.white, fontSize: 12),
+            ),
+          ),
+                Container(
+                  height: 500,
+                  width: 800,
+                  margin: EdgeInsets.fromLTRB(8, 0, 8, 0),
+               //   color: Color.fromARGB(255, 139, 158, 192),
+                  //  decoration: BoxDecoration(
                         
-                        // height: 100,
-                        width: width,
-                        padding: EdgeInsets.all(6),
-                        margin: EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 139, 158, 192),
-                          // borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              //  offset: Offset(0, 1),
-                              blurRadius: 15,
-                              color: Colors.black.withOpacity(0.9),
-                            ),
-                          ],
-                        ),
-                        child: Column(
-                          children: [
-                            Text(
-                              'Digital Transport passenger interface',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 15),
-                            ),
-                             SizedBox(
-                              height: 10,
-                            ),
-                            Image.asset('lib/images/mob11.jpg'),
+                  //         // borderRadius: BorderRadius.circular(10),
+                  //         boxShadow: [
+                  //           BoxShadow(
+                  //             //  offset: Offset(0, 1),
+                  //             blurRadius: 15,
+                  //             color: Colors.black.withOpacity(0.9),
+                  //           ),
+                  //         ],
+                  //       ),
+                  child: ListWheelScrollViewX(itemExtent: 200, 
+                 
+                  scrollDirection: Axis.horizontal,
+                  
+                  children: [
+                     Image.asset('lib/images/mob11.jpg'),
                             SizedBox(
                               height: 10,
                             ),
@@ -179,27 +200,28 @@ class _mobilemodeState extends State<mobilemode> {
                               height: 10,
                             ),
                             Image.asset('lib/images/mob333.jpg'),
-                                   Container(
+                  ])
+
+                  
+                ),
+                 Container(
   //width: width*0.4,
-  margin: EdgeInsets.all(10),
   alignment: Alignment.center,
-
-
+ margin: EdgeInsets.fromLTRB(8, 0, 8, 8),
+  
 child: Container(
       alignment: Alignment.center,
-      child: ElevatedButton(onPressed: (){}, child: Text('  Demo',style: TextStyle(color:Colors.black),),
+      child: ElevatedButton(onPressed: _launchUrl1, child: Text('github',style: TextStyle(color:Colors.black),),
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.white
     ),),
     ),
-   ),
+),
 
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
+],
+                  ),
                 ),
+                
                 Row(
                   children: [
                     Flexible(
@@ -244,7 +266,7 @@ child: Container(
                               Container(
                                 padding: EdgeInsets.all(2),
                                     alignment: Alignment.center,
-                                    child: ElevatedButton(onPressed: (){}, child: Text('  Demo',style: TextStyle(color:Colors.black),),
+                                    child: ElevatedButton(onPressed: _launchUrl1, child: Text('github',style: TextStyle(color:Colors.black),),
                                  
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.white

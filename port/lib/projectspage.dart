@@ -1,7 +1,15 @@
+
+
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:port/desktopmode.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:list_wheel_scroll_view_nls/list_wheel_scroll_view_nls.dart';
+
+
 
 class projectpage extends StatefulWidget {
   const projectpage({super.key});
@@ -11,10 +19,26 @@ class projectpage extends StatefulWidget {
 }
 
 class _projectpageState extends State<projectpage> {
+  final Uri _url = Uri.parse('https://github.com/amanuwa/compff');
+
+ Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
+}
+final Uri _url1 = Uri.parse('https://github.com/amanuwa/digitaltransport');
+
+ Future<void> _launchUrl1() async {
+  if (!await launchUrl(_url1)) {
+    throw Exception('Could not launch $_url');
+  }
+}
+  final String url = 'https://www.example.com';
+  //https://github.com/amanuwa/digitaltransport
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 22, 47, 67),
+    return  Scaffold(
+      backgroundColor:Colors.white,
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 14, 32, 46),
         title: Text(
@@ -35,7 +59,7 @@ class _projectpageState extends State<projectpage> {
            
         Container(
           margin: EdgeInsets.all(10),
-           color: Color.fromARGB(255, 139, 158, 192),
+         color:  const Color.fromARGB(255, 14, 32, 46),
           child: Column(
             children: 
           [
@@ -88,7 +112,7 @@ class _projectpageState extends State<projectpage> {
 
 child: Container(
       alignment: Alignment.center,
-      child: ElevatedButton(onPressed: (){}, child: Text('  Demo',style: TextStyle(color:Colors.black),),
+      child: ElevatedButton(onPressed:_launchUrl, child: Text('github',style: TextStyle(color:Colors.black),),
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.white
     ),),
@@ -106,7 +130,7 @@ child: Container(
           SizedBox(height: 20,),
   Container(
     margin: EdgeInsets.all(10),
-    color: Color.fromARGB(255, 139, 158, 192),
+    color: const Color.fromARGB(255, 14, 32, 46),
     child: Column(children: [
        Container(
            margin: EdgeInsets.all(8),
@@ -116,7 +140,14 @@ child: Container(
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),
-            Row(
+          Container(
+           // color: Colors.red,
+            height: 400,
+               width: 1000,
+               child:    ListWheelScrollViewX(
+              scrollDirection: Axis.horizontal,
+            itemExtent: 200,
+          
             children: [ 
               SizedBox(width: 30,),
               Image.asset('lib/images/mob11.jpg'),
@@ -130,6 +161,24 @@ child: Container(
                             Image.asset('lib/images/mob333.jpg'),],
           ),
          
+          ),
+          //   ListWheelScrollViewX(
+          //     scrollDirection: Axis.horizontal,
+          //   itemExtent: 50,
+          
+          //   children: [ 
+          //     SizedBox(width: 30,),
+          //     Image.asset('lib/images/mob11.jpg'),
+          //                   SizedBox(
+          //                     width: 40,
+          //                   ),
+          //                   Image.asset('lib/images/mob22.jpg'),
+          //                   SizedBox(
+          //                     width: 40,
+          //                   ),
+          //                   Image.asset('lib/images/mob333.jpg'),],
+          // ),
+         
 SizedBox(height: 10,),
 Container(
   //width: width*0.4,
@@ -138,7 +187,7 @@ Container(
 
 child: Container(
       alignment: Alignment.center,
-      child: ElevatedButton(onPressed: (){}, child: Text('  Demo',style: TextStyle(color:Colors.black),),
+      child: ElevatedButton(onPressed: _launchUrl1, child: Text('github',style: TextStyle(color:Colors.black),),
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.white
     ),),

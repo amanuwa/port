@@ -40,6 +40,12 @@ dev_dependencies:
   flutter_test:
      sdk: flutter
   animated_text_kit: ^4.2.2
+  video_player: ^2.8.1
+  url_launcher: ^6.1.11
+  list_wheel_scroll_view_nls: ^0.0.3
+ 
+ 
+ 
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -75,6 +81,8 @@ flutter:
     - lib/images/signup.png
     - lib/images/signinpage.png
     - lib/images/journey.png
+    - lib/images/mobvideo.mp4
+    - lib/images/companyvideo.mp4
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
