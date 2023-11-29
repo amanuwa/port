@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:port/mobilecvpage.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:list_wheel_scroll_view_nls/list_wheel_scroll_view_nls.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class mobilemode extends StatefulWidget {
   const mobilemode({super.key});
@@ -123,16 +124,49 @@ final Uri _url1 = Uri.parse('https://github.com/amanuwa/digitaltransport');
           Flexible(
             child: ListView(
               children: [
-               Container(
-                margin: EdgeInsets.all(15),
-                child:  Text(
-                  'Hello, I\' am Amanuel Bekele ',
-                  style: TextStyle(
-                      color: Colors.white,
+                 Container(
+                  margin: EdgeInsets.all(10),
+                  
+  width: 250.0,
+  child: DefaultTextStyle(
+
+
+
+
+    
+                
+    style:  TextStyle(
+      color: Colors.white,
                       fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                ),
-               ),
+                      fontSize: 20
+    ),
+    child: AnimatedTextKit(
+      animatedTexts: [
+        TypewriterAnimatedText('Hello, I\' am Amanuel Bekele '),
+      
+      ],
+      onTap: () {
+        print("Tap Event");
+      },
+         repeatForever: true,
+    ),
+  ),
+),
+
+
+
+
+
+              //  Container(
+              //   margin: EdgeInsets.all(15),
+              //   child:  Text(
+              //     'Hello, I\' am Amanuel Bekele ',
+              //     style: TextStyle(
+              //         color: Colors.white,
+              //         fontWeight: FontWeight.bold,
+              //         fontSize: 20),
+              //   ),
+              //  ),
 
                 SizedBox(
                   height: 5,

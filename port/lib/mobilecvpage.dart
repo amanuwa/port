@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:port/mobilemode.dart';
+import 'package:list_wheel_scroll_view_nls/list_wheel_scroll_view_nls.dart';
 
 class mobilecvpage extends StatefulWidget {
   const mobilecvpage({super.key});
@@ -30,27 +31,31 @@ class _mobilecvpageState extends State<mobilecvpage> {
         backgroundColor: const Color.fromARGB(255, 14, 32, 46),
       
       ),
-    body: ListView(
-        //color: Colors.amber,
-        children: [
-          Container(
-           // color: Colors.white,
-            height: height*0.6,
+    body: Container(
+      child:   ListWheelScrollViewX(itemExtent: 500, 
+                 
+                 // scrollDirection: Axis.horizontal,
+          //color: Colors.amber,
+          children: [
+            Container(
+             // color: Colors.white,
+              height: height*0.6,
+              width: double.infinity,
+              margin: const EdgeInsets.all(5),
+              child: Image.asset('lib/images/cv.png')
+            ),
+           // SizedBox(height: 5,),
+            Container(
+            //  color: Colors.red,
+                height: height*0.5,
             width: double.infinity,
-            margin: const EdgeInsets.all(5),
-            child: Image.asset('lib/images/cv.png')
-          ),
-         // SizedBox(height: 5,),
-          Container(
-          //  color: Colors.red,
-              height: height*0.5,
-          width: double.infinity,
-            margin: const EdgeInsets.all(5),
-            child: Image.asset('lib/images/tempo.png')
-          ),
-
-        ],
-      ),
+              margin: const EdgeInsets.all(5),
+              child: Image.asset('lib/images/tempo.png')
+            ),
+      
+          ],
+        ),
+    ),
 
       
 
