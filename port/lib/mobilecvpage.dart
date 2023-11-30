@@ -31,6 +31,7 @@ class _mobilecvpageState extends State<mobilecvpage> {
         backgroundColor: const Color.fromARGB(255, 14, 32, 46),
       
       ),
+
     body: Container(
       child:   ListWheelScrollViewX(itemExtent: 500, 
                  
