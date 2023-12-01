@@ -187,7 +187,7 @@ final Uri url3 = Uri.parse('https://weathernewapp.vercel.app');
                 Container(
                     padding: EdgeInsets.all(7),
                     child: Text(
-                        '\nSkills \n- Develop best and responsive ui mobile App\n- Develop best and responsive webApp ui \n- develop   responsive cross platform( for mobile , Web and tablet ) flutter App ',
+                        '\nSkills\n- Convert project figma to its  identical flutter ui  \n- Develop best and responsive ui mobile App\n- Develop best and responsive webApp ui \n- develop   responsive cross platform( for mobile , Web and tablet ) flutter App ',
                         style: TextStyle(color: Colors.white, fontSize: 14))),
                 SizedBox(
                   height: 10,

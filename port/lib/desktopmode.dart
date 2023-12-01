@@ -134,7 +134,7 @@ class _desktopmodeState extends State<desktopmode> {
                       ),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 20,
                     ),
                     Align(
                       alignment: Alignment.topLeft,
@@ -201,6 +201,7 @@ class _desktopmodeState extends State<desktopmode> {
           ),
            Container(
             margin: EdgeInsets.all(15),
+            alignment: Alignment.center,
             child: Text(
               'skills',
               style: TextStyle(color: Colors.white, fontSize: 20),
@@ -209,16 +210,59 @@ class _desktopmodeState extends State<desktopmode> {
           ),
           SizedBox(height:15,),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
                 SizedBox(width: 15,),
-              Image.asset('lib/images/webapp.png'),
+                Text(' Convert project figma to its identical flutter ui', style: TextStyle(color: Colors.white, fontSize: 15),),
+              
               SizedBox(
                 width: 20,
               ),
-               Image.asset('lib/images/fluttermobileApp.png'),
+               Image.asset('lib/images/figmatoflutter.png'),
 
             ],
           ),
+           SizedBox(height:15,),
+             Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+
+                Image.asset('lib/images/fluttermobileApp.png'),
+                SizedBox(width: 15,),
+                Text(' Develop best and responsive ui mobile App', style: TextStyle(color: Colors.white, fontSize: 15),),
+              
+              
+             
+
+            ],
+          ),
+             SizedBox(height:15,),
+             Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+
+               
+              
+                Text(' Develop best and responsive webApp ui', style: TextStyle(color: Colors.white, fontSize: 15),),
+                  SizedBox(width: 15,),
+               Image.asset('lib/images/webapp.png'),
+              
+             
+
+            ],
+          ),
+          
+          // Row(
+          //   children: [
+          //       SizedBox(width: 15,),
+          //     Image.asset('lib/images/webapp.png'),
+          //     SizedBox(
+          //       width: 20,
+          //     ),
+          //      Image.asset('lib/images/fluttermobileApp.png'),
+
+          //   ],
+          // ),
           SizedBox(
             height: 15,
           ),
