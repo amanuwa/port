@@ -33,8 +33,22 @@ final Uri _url1 = Uri.parse('https://github.com/amanuwa/digitaltransport');
     throw Exception('Could not launch $_url');
   }
 }
-  final String url = 'https://www.example.com';
-  //https://github.com/amanuwa/digitaltransport
+final Uri _url2 = Uri.parse('https:github.com/amanuwa/weather');
+
+ Future<void> _launchUrl2() async {
+  if (!await launchUrl(_url2)) {
+    throw Exception('Could not launch $_url');
+  }
+}
+final Uri url3 = Uri.parse('https://weathernewapp.vercel.app');
+
+ Future<void> _launchUrl3() async {
+  if (!await launchUrl(url3)) {
+    throw Exception('Could not launch $_url');
+  }
+}
+//https://weathernewapp.vercel.app/
+ 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -162,22 +176,7 @@ child: Container(
           ),
          
           ),
-          //   ListWheelScrollViewX(
-          //     scrollDirection: Axis.horizontal,
-          //   itemExtent: 50,
-          
-          //   children: [ 
-          //     SizedBox(width: 30,),
-          //     Image.asset('lib/images/mob11.jpg'),
-          //                   SizedBox(
-          //                     width: 40,
-          //                   ),
-          //                   Image.asset('lib/images/mob22.jpg'),
-          //                   SizedBox(
-          //                     width: 40,
-          //                   ),
-          //                   Image.asset('lib/images/mob333.jpg'),],
-          // ),
+         
          
 SizedBox(height: 10,),
 Container(
@@ -192,6 +191,79 @@ child: Container(
       backgroundColor: Colors.white
     ),),
     ),
+),
+  ],),),
+     
+          SizedBox(height: 20,),
+  Container(
+    margin: EdgeInsets.all(10),
+    color: const Color.fromARGB(255, 14, 32, 46),
+    child: Column(children: [
+       Container(
+           margin: EdgeInsets.all(8),
+            alignment: Alignment.center,
+            child: Text(
+              'Weather App',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+          Container(
+           // color: Colors.red,
+            height: 400,
+               width: 1000,
+               child:    ListWheelScrollViewX(
+              scrollDirection: Axis.horizontal,
+            itemExtent: 200,
+          
+            children: [ 
+              SizedBox(width: 30,),
+              Image.asset('lib/images/weatherApp.png'),
+                            SizedBox(
+                              width: 40,
+                            ),
+                            Image.asset('lib/images/weatherApp2.jpg'),
+                            SizedBox(
+                              width: 40,
+                            ),
+                            Image.asset('lib/images/weatherApp3.jpg'),],
+          ),
+         
+          ),
+         
+         
+SizedBox(height: 10,),
+Container(
+  //width: width*0.4,
+  alignment: Alignment.center,
+ margin: EdgeInsets.all(10),
+
+// child: Container(
+//       alignment: Alignment.center,
+//       child: ElevatedButton(onPressed: _launchUrl2, child: Text('github',style: TextStyle(color:Colors.black),),
+//     style: ElevatedButton.styleFrom(
+//       backgroundColor: Colors.white
+//     ),),
+//     ),
+child: Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+  Container(
+      alignment: Alignment.center,
+      child: ElevatedButton(onPressed: _launchUrl2, child: Text('github',style: TextStyle(color:Colors.black),),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.white
+    ),),
+    ),
+    SizedBox(width: 10,),
+    Container(
+      alignment: Alignment.center,
+      child: ElevatedButton(onPressed: _launchUrl3, child: Text('demo',style: TextStyle(color:Colors.black),),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.white
+    ),),
+    ),
+
+],),
 ),
   ],),),
 

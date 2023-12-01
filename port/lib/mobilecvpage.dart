@@ -10,8 +10,21 @@ class mobilecvpage extends StatefulWidget {
 }
 
 class _mobilecvpageState extends State<mobilecvpage> {
+
+
+
+
+
+
+
+
+
+  ////////////////////////////
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+
+  
+  {
     double height = MediaQuery.of(context).size.height;
     return  Scaffold(
        backgroundColor: Color.fromARGB(255, 73, 112, 145),
@@ -62,4 +75,5 @@ class _mobilecvpageState extends State<mobilecvpage> {
 
     );
   }
+  //////////////////////////////////
 }

@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:port/desktopmode.dart';
-
+import 'package:list_wheel_scroll_view_nls/list_wheel_scroll_view_nls.dart';
 
 class Aboutmepage extends StatefulWidget {
   const Aboutmepage({super.key});
@@ -12,12 +12,15 @@ class Aboutmepage extends StatefulWidget {
 }
 
 class _AboutmepageState extends State<Aboutmepage> {
+
+
   @override
-  Widget build(BuildContext context) {
-    //   double width = MediaQuery.of(context).size.width;
+  Widget build(BuildContext context)
+  
+   {
     double height = MediaQuery.of(context).size.height;
-    return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 22, 47, 67),
+    return  Scaffold(
+       backgroundColor: Color.fromARGB(255, 73, 112, 145),
       appBar: AppBar(
           leading: BackButton(
             color: Colors.white,
@@ -27,32 +30,44 @@ class _AboutmepageState extends State<Aboutmepage> {
                   builder: (_) => const desktopmode(),
                 )),
           ),
-        title: const Text(
+        title: Text(
           'My CV',
           style: TextStyle(color: Colors.white, fontSize: 25),
         ),
         backgroundColor: const Color.fromARGB(255, 14, 32, 46),
       
       ),
-      body: ListView(
-        //color: Colors.amber,
-        children: [
-          Container(
-            height: height,
-            width: double.infinity,
-            margin: const EdgeInsets.all(10),
-            child: Image.asset('lib/images/cv.png')
-          ),
-          const SizedBox(height: 5,),
-          Container(
-              height: height,
-          width: double.infinity,
-            margin: const EdgeInsets.all(10),
-            child: Image.asset('lib/images/tempo.png')
-          ),
 
-        ],
-      ),
+    body: Container(
+      child:   ListWheelScrollViewX(itemExtent: 600, 
+                 
+                 // scrollDirection: Axis.horizontal,
+          //color: Colors.amber,
+          children: [
+            Container(
+             // color: Colors.white,
+              height: height*0.6,
+              width: double.infinity,
+              margin: const EdgeInsets.all(5),
+              child: Image.asset('lib/images/cv.png')
+            ),
+           // SizedBox(height: 5,),
+            Container(
+            //  color: Colors.red,
+                height: height*0.5,
+            width: double.infinity,
+              margin: const EdgeInsets.all(5),
+              child: Image.asset('lib/images/tempo.png')
+            ),
+      
+          ],
+        ),
+    ),
+
+      
+
     );
   }
+
+  
 }

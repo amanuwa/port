@@ -33,6 +33,14 @@ final Uri _url1 = Uri.parse('https://github.com/amanuwa/digitaltransport');
     throw Exception('Could not launch $_url');
   }
 }
+final Uri url3 = Uri.parse('https://weathernewapp.vercel.app');
+
+ Future<void> _launchUrl3() async {
+  if (!await launchUrl(url3)) {
+    throw Exception('Could not launch $_url');
+  }
+}
+
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -316,6 +324,112 @@ child: Container(
                 SizedBox(
                   height: 10,
                 ),
+                Container(
+    margin: EdgeInsets.all(10),
+    color: Color.fromARGB(255, 139, 158, 192),
+    child: Column(children: [
+       Container(
+           margin: EdgeInsets.all(8),
+            alignment: Alignment.center,
+            child: Text(
+              'Weather App',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+          Container(
+           // color: Colors.red,
+            height: 400,
+               width: 1000,
+               child:    ListWheelScrollViewX(
+              scrollDirection: Axis.horizontal,
+            itemExtent: 200,
+          
+            children: [ 
+              SizedBox(width: 30,),
+              Image.asset('lib/images/weatherApp.png'),
+                            SizedBox(
+                              width: 40,
+                            ),
+                            Image.asset('lib/images/weatherApp2.jpg'),
+                            SizedBox(
+                              width: 40,
+                            ),
+                            Image.asset('lib/images/weatherApp3.jpg'),],
+          ),
+         
+          ),
+         
+         
+SizedBox(height: 10,),
+Container(
+  //width: width*0.4,
+  alignment: Alignment.center,
+ margin: EdgeInsets.all(10),
+
+// child: Container(
+//       alignment: Alignment.center,
+//       child: ElevatedButton(onPressed: _launchUrl2, child: Text('github',style: TextStyle(color:Colors.black),),
+//     style: ElevatedButton.styleFrom(
+//       backgroundColor: Colors.white
+//     ),),
+//     ),
+child: Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+  Container(
+      alignment: Alignment.center,
+      child: ElevatedButton(onPressed: _launchUrl1, child: Text('github',style: TextStyle(color:Colors.black),),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.white
+    ),),
+    ),
+    SizedBox(width: 10,),
+    Container(
+      alignment: Alignment.center,
+      child: ElevatedButton(onPressed: _launchUrl3, child: Text('demo',style: TextStyle(color:Colors.black),),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.white
+    ),),
+    ),
+
+],),
+),
+  ],),),
+
+                //_launchUrl3
+//                 Container(
+//   //width: width*0.4,
+//   alignment: Alignment.center,
+//  margin: EdgeInsets.all(10),
+
+// // child: Container(
+// //       alignment: Alignment.center,
+// //       child: ElevatedButton(onPressed: _launchUrl2, child: Text('github',style: TextStyle(color:Colors.black),),
+// //     style: ElevatedButton.styleFrom(
+// //       backgroundColor: Colors.white
+// //     ),),
+// //     ),
+// child: Row(
+//   mainAxisAlignment: MainAxisAlignment.center,
+//   children: [
+//   Container(
+//       alignment: Alignment.center,
+//       child: ElevatedButton(onPressed: _launchUrl1, child: Text('github',style: TextStyle(color:Colors.black),),
+//     style: ElevatedButton.styleFrom(
+//       backgroundColor: Colors.white
+//     ),),
+//     ),
+//     SizedBox(width: 10,),
+//     Container(
+//       alignment: Alignment.center,
+//       child: ElevatedButton(onPressed: _launchUrl3, child: Text('demo',style: TextStyle(color:Colors.black),),
+//     style: ElevatedButton.styleFrom(
+//       backgroundColor: Colors.white
+//     ),),
+//     ),
+
+// ],),
+// ),
                 Container(
                   padding: EdgeInsets.all(6),
                   child: Column(
