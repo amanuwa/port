@@ -87,6 +87,9 @@ flutter:
     - lib/images/weatherApp2.jpg
     - lib/images/weatherApp3.jpg
     - lib/images/figmatoflutter.png
+    - lib/images/newsaap.png
+    - lib/images/newsapp.jpg
+    - lib/images/newsapp1.jpg
  
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

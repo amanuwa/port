@@ -47,7 +47,22 @@ final Uri url3 = Uri.parse('https://weathernewapp.vercel.app');
     throw Exception('Could not launch $_url');
   }
 }
+
 //https://weathernewapp.vercel.app/
+final Uri _url8 = Uri.parse('https://github.com/amanuwa/NewsApp');
+
+ Future<void> _launchUrl8() async {
+  if (!await launchUrl(_url8)) {
+    throw Exception('Could not launch $_url');
+  }
+}
+final Uri url4 = Uri.parse('https://amannewsapp.vercel.app/');
+
+ Future<void> _launchUrl4() async {
+  if (!await launchUrl(url4)) {
+    throw Exception('Could not launch $_url');
+  }
+}
  
   @override
   Widget build(BuildContext context) {
@@ -195,6 +210,7 @@ child: Container(
   ],),),
      
           SizedBox(height: 20,),
+     //////////////////////////////     
   Container(
     margin: EdgeInsets.all(10),
     color: const Color.fromARGB(255, 14, 32, 46),
@@ -237,13 +253,7 @@ Container(
   alignment: Alignment.center,
  margin: EdgeInsets.all(10),
 
-// child: Container(
-//       alignment: Alignment.center,
-//       child: ElevatedButton(onPressed: _launchUrl2, child: Text('github',style: TextStyle(color:Colors.black),),
-//     style: ElevatedButton.styleFrom(
-//       backgroundColor: Colors.white
-//     ),),
-//     ),
+
 child: Row(
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
@@ -267,8 +277,73 @@ child: Row(
 ),
   ],),),
 
-
+//////////////////
 SizedBox(height: 10,),
+  Container(
+    margin: EdgeInsets.all(10),
+    color: const Color.fromARGB(255, 14, 32, 46),
+    child: Column(children: [
+       Container(
+           margin: EdgeInsets.all(8),
+            alignment: Alignment.center,
+            child: Text(
+              'News App',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
+          Container(
+           // color: Colors.red,
+            height: 400,
+               width: 1000,
+               child:    ListWheelScrollViewX(
+              scrollDirection: Axis.horizontal,
+            itemExtent: 200,
+          
+            children: [ 
+              SizedBox(width: 30,),
+              Image.asset('lib/images/newsapp.jpg'),
+                            SizedBox(
+                              width: 40,
+                            ),
+                            Image.asset('lib/images/newsaap.png'),
+                            SizedBox(
+                              width: 40,
+                            ),
+                            Image.asset('lib/images/newsapp1.jpg'),],
+          ),
+         
+          ),
+         
+         
+SizedBox(height: 10,),
+Container(
+  //width: width*0.4,
+  alignment: Alignment.center,
+ margin: EdgeInsets.all(10),
+
+
+child: Row(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+  Container(
+      alignment: Alignment.center,
+      child: ElevatedButton(onPressed: _launchUrl8, child: Text('github',style: TextStyle(color:Colors.black),),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.white
+    ),),
+    ),
+    SizedBox(width: 10,),
+    Container(
+      alignment: Alignment.center,
+      child: ElevatedButton(onPressed: _launchUrl4, child: Text('demo',style: TextStyle(color:Colors.black),),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.white
+    ),),
+    ),
+
+],),
+),
+  ],),),
 
                   ],
       ),
